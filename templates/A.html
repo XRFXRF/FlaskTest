@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   {# <form method="post">
+        <label>User:</label><input type='text' name="username"><br>
+        <label>Pin:</label><input type='password' name="password"><br>
+        <label>Comfirmpin:</label><input type='password' name="password2"><br>
+        <input type="submit" value="Submit!"><br>
+        {%for i in get_flashed_messages()%}
+            {{i}}
+        {% endfor%}
+        </form>
+    <hr>#}
+<form method='post'>
+    {{form.csrf_token()}}
+    {{form.username.label}}{{form.username}}<br>
+    {{form.password.label}}{{form.password}}
+    {{form.password2.label}}{{form.password2}}
+    {{form.submit}}<br>
+    
+    {%for i in get_flashed_messages()%}
+        {{i}}
+    {% endfor%}
+    
+
+
+    
+ </form>
+</body>
+</html>
